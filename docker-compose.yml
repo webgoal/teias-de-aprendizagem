@@ -1,0 +1,19 @@
+db:
+  image: postgres
+
+web:
+  build: .
+  command: bundle exec unicorn_rails -c config/unicorn.rb
+  volumes:
+    - .:/myapp
+    - /tmp:/tmp
+  links:
+    - db
+    - nginx
+
+nginx:
+  image: webgoal/nginx-rails-socket
+  volumes:
+    - /tmp:/tmp
+  ports:
+    - 80:80
