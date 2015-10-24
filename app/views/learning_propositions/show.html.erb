@@ -5,7 +5,7 @@
 
   <h4><%= @learning_proposition.location%></h4>
   <div class="">
-    <button type="button" class="btn btn-success">I'm interested!</button>
+    <%= link_to("I'm interested!", new_learning_proposition_interest_url(@learning_proposition), {class:"btn btn-success"})  %>
   </div>
   <!-- Table -->
 </div>

@@ -1,4 +1,4 @@
-= simple_form_for(@interest) do |f|
+= simple_form_for(@learning_proposition, @interest) do |f|
   = f.error_notification
 
   .form-inputs
@@ -6,7 +6,7 @@
     = f.input :email
     = f.input :phone
     = f.input :roles_mask
-    = f.association :learning_propositions_id
+    = f.association :learning_propositions
 
   .form-actions
     = f.button :submit
