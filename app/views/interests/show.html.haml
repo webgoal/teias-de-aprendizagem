@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @interest.name
+%p
+  %b Email:
+  = @interest.email
+%p
+  %b Phone:
+  = @interest.phone
+%p
+  %b Roles mask:
+  = @interest.roles_mask
+%p
+  %b Learning propositions:
+  = @interest.learning_propositions_id
+
+= link_to 'Edit', edit_interest_path(@interest)
+\|
+= link_to 'Back', interests_path
