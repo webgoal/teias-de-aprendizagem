@@ -3,5 +3,6 @@ class LearningPropositionsController < ApplicationController
   end
 
   def show
+    @proposta = LearningProposition.find(params[:id])
   end
 end
