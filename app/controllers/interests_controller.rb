@@ -1,5 +1,6 @@
 class InterestsController < ApplicationController
   before_action :set_interest, only: [:show, :edit, :update, :destroy]
+  before_action :set_learning_proposition, only: [:show, :edit, :update, :destroy]
 
   # GET /interests
   # GET /interests.json
@@ -67,6 +68,9 @@ class InterestsController < ApplicationController
       @interest = Interest.find(params[:id])
     end
 
+    def set_learning_proposition
+      @interest = LearningProposition.find(params[:learning_proposition_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def interest_params
       params.require(:interest).permit(:name, :email, :phone, :roles_mask, :learning_propositions_id)
