@@ -12,7 +12,7 @@ web:
     - nginx
 
 nginx:
-  image: webgoal/nginx-rails-socket
+  build: ./nginx/dev
   volumes:
     - /tmp:/tmp
   ports:
