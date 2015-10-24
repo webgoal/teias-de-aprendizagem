@@ -5,5 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+LearningProposition.create!(
+  [
+    { name: "Artificial Inteligence Course", session_date: Date.today, location: "Poços de Caldas", min_attendees: 5, max_attendees: 10 },
+    { name: "Atelie de Software", session_date: Date.today, location: "São Paulo", min_attendees: 5, max_attendees: 10 }
+  ]
+
+)
+Interest.create!(
+  [
+    {name: "Paulo", email: "paulo@email.com", phone: "3599911993", roles_mask: 0, learning_proposition: LearningProposition.first }
+  ]
+)
