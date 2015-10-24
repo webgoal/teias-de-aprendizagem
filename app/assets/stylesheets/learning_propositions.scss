@@ -1,3 +1,29 @@
 // Place all the styles related to the learning_propositions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+
+//Page create section of learning
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+$green: #00b8bc;
+
+.logo {
+  width: 314px;
+  height: 78px;
+}
+
+.title-page {
+  font-size: 28px;
+  color: $green;
+  h1 {}
+}
+
+input, textarea {
+  font-size: 16px !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
