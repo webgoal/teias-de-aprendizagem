@@ -12,38 +12,35 @@
         <h1>CRIAR SESSÃO DE APRENDIZAGEM</h1>
       </div>
 
-
+      <%= form_for @learning_proposition do |f| %>
         <div class="form-group">
-          <input type="text" class="form-control input-lg" id="tema" placeholder="Tema da Sessão de Aprendizagem. Ex: Gestão Ágil de Prjetos com Scrum">
+          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Tema da Sessão de Aprendizagem. Ex: Gestão Ágil de Prjetos com Scrum"%>
         </div>
         <div class="form-group">
-          <textarea name="name" class="form-control"  rows="3" placeholder="Descrição do Tema"></textarea>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6">
-              <input type="text" class="form-control input-lg" id="numero_minimo" placeholder="Numero mínimo de participantes">
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control input-lg" id="numero_minimo" placeholder="Numero maximo de participantes">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control input-lg" id="tema" placeholder="Local">
+          <%= f.text_area :description, class:"form-control", placeholder:"Descrição do Tema", rows:"3"%>
         </div>
         <div class="form-group">
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control input-lg" id="tema" placeholder="Data">
+              <%= f.text_field :min_attendees, class: "form-control input-lg", placeholder: "Numero mínimo de participantes"%>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control input-lg" id="tema" placeholder="Horário">
+              <%= f.text_field :max_attendees, class: "form-control input-lg", placeholder: "Numero maximo de participantes"%>
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-success"> CRIAR SESSÃO </button>
-      
+        <div class="form-group">
+          <%= f.text_field :location, class: "form-control input-lg", placeholder: "Local"%>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.text_field :session_date, class: "form-control input-lg", placeholder: "Data e Hora"%>
+            </div>
+          </div>
+        </div>
+        <%= f.submit "CRIAR SESSÃO", class:"btn btn-success" %>
+      <% end %>
     </div>
   </div>
 </div>
