@@ -5,4 +5,6 @@ class LearningPropositionsController < ApplicationController
   def show
     @proposta = LearningProposition.find(params[:id])
   end
+  def new
+  end
 end
