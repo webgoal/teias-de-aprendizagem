@@ -5,7 +5,7 @@ class CreateInterests < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.integer :roles_mask
-      t.references :learning_propositions_id, index: true, foreign_key: true
+      t.references :learning_proposition, index: true, foreign_key: true
 
       t.timestamps null: false
     end
