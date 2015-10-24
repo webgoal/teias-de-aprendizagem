@@ -1,0 +1,2 @@
+class LearningPropositionsController < ApplicationController
+end
