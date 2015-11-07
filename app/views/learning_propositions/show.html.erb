@@ -1,11 +1,28 @@
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading"><h2><%= @learning_proposition.name%></h2></div>
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li class="active">Data</li>
+</ol>
 
-  <h4><%= @learning_proposition.location%></h4>
+<div class="box-detail">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2><%= @learning_proposition.name%></h2>
+    <p><%= @learning_proposition.location%></p>
+    <p><%= @learning_proposition.session_date%></p>
+  </div>
+
   <div class="">
-    <%= link_to("I'm interested!", new_learning_proposition_interest_url(@learning_proposition), {class:"btn btn-success"})  %>
+    <%= link_to("INCREVER-SE AGORA", new_learning_proposition_interest_url(@learning_proposition), {class:"btn btn-orange"})  %>
   </div>
   <!-- Table -->
+</div>
+
+<div class="descricao">
+
+  <h3>O Tema:</h3>
+  <p>
+    <%= @learning_proposition.description%>
+  </p>
+
 </div>
