@@ -5,8 +5,14 @@
     = f.input :name
     = f.input :email
     = f.input :phone
-    = f.input :roles_mask
-    = f.association :learning_proposition
+    .btn-group{"data-toggle" => "buttons"}
+      %label.btn.btn-default
+        = f.radio_button :roles_mask, 1
+        Aluno
+      %label.btn.btn-default
+        = f.radio_button :roles_mask, 2
+        Mestre
+    
 
   .form-actions
     = f.button :submit

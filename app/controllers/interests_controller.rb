@@ -26,7 +26,7 @@ class InterestsController < ApplicationController
   # POST /interests.json
   def create
     @interest = Interest.new(interest_params)
-
+    @interest.learning_proposition = @learning_proposition
     respond_to do |format|
       if @interest.save
         format.html { redirect_to @learning_proposition, notice: 'Interest was successfully created.' }
