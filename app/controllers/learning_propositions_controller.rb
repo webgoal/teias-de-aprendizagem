@@ -15,7 +15,16 @@ class LearningPropositionsController < ApplicationController
 
   def create
     @learning_proposition = LearningProposition.new(learning_proposition_params)
-    @learning_proposition.save
+
+    respond_to do |format|
+      if @learning_proposition.save
+        format.html { redirect_to @learning_proposition, notice: 'Proposta foi criada com sucesso.' }
+
+      else
+        format.html { render :new }
+
+      end
+    end
   end
 
   def delete
