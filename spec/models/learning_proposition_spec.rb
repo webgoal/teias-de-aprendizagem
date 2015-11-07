@@ -14,4 +14,8 @@ RSpec.describe LearningProposition, type: :model do
     expect(learning_proposition.save).to be false
   end
 
+  it 'Should not delete Learning Proposition without password' do
+    learning_proposition = create(:learning_proposition)
+    expect(learning_proposition.safe_destroy(nil)).to be false
+  end
 end

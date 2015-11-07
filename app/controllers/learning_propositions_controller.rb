@@ -17,8 +17,17 @@ class LearningPropositionsController < ApplicationController
     @learning_proposition.save
   end
 
+  def delete
+    @learning_proposition = LearningProposition.find(delete_learning_proposition_params[:id])
+    @learning_proposition.safe_destroy(delete_learning_proposition_params[:password])
+  end
+
   private
   def learning_proposition_params
-    params.require(:learning_proposition).permit(:name, :description, :min_attendees, :max_attendees, :location, :session_date)
+    params.require(:learning_proposition).permit(:name, :description, :min_attendees, :max_attendees, :location, :session_date, :password)
+  end
+
+  def delete_learning_proposition_params
+    params.require(:learning_proposition).permit(:password, :id)
   end
 end
