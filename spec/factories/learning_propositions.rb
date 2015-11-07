@@ -5,6 +5,7 @@ FactoryGirl.define do
     location "MyString"
     min_attendees 2
     max_attendees 5
+    password "123456"
   end
 
 end
