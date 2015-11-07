@@ -6,13 +6,12 @@
     = f.input :email
     = f.input :phone
     .btn-group{"data-toggle" => "buttons"}
-      %label.btn.btn-default
+      %label.btn.btn-primary
         = f.radio_button :roles_mask, 1
         Aluno
-      %label.btn.btn-default
+      %label.btn.btn-primary
         = f.radio_button :roles_mask, 2
         Mestre
-    
-
+  %p
   .form-actions
-    = f.button :submit
+    = f.button :submit , class: "btn btn-success"

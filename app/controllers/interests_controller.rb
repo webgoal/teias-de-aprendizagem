@@ -29,7 +29,7 @@ class InterestsController < ApplicationController
     @interest.learning_proposition = @learning_proposition
     respond_to do |format|
       if @interest.save
-        format.html { redirect_to @learning_proposition, notice: 'Interest was successfully created.' }
+        format.html { redirect_to @learning_proposition, notice: 'Interesse foi criado com sucesso.' }
 
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class InterestsController < ApplicationController
   def update
     respond_to do |format|
       if @interest.update(interest_params)
-        format.html { redirect_to @learning_proposition, notice: 'Interest was successfully updated.' }
+        format.html { redirect_to @learning_proposition, notice: 'Interesse foi atualizado.' }
 
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class InterestsController < ApplicationController
   def destroy
     @interest.destroy
     respond_to do |format|
-      format.html { redirect_to interests_url, notice: 'Interest was successfully destroyed.' }
+      format.html { redirect_to interests_url, notice: 'Interesse foi deletado.' }
       format.json { head :no_content }
     end
   end
