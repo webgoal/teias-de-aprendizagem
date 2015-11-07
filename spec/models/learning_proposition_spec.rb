@@ -28,5 +28,12 @@ RSpec.describe LearningProposition, type: :model do
       proposition_4=create(:learning_proposition_4)
       expect(LearningProposition.find_open).to eq [proposition_4]
     end
+    it "filter close Propositions" do
+      proposition_1=create(:learning_proposition_1)
+      proposition_2=create(:learning_proposition_2)
+      proposition_3=create(:learning_proposition_3)
+      create(:learning_proposition_4)
+      expect(LearningProposition.find_close).to eq [proposition_1,proposition_2,proposition_3]
+    end
   end
 end
