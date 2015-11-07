@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-md-8">
     <div class="logo">
-      <img src="<%= image_path("logo.png") %>">
+      <%= link_to image_tag("logo.png"), learning_propositions_path %>
     </div>
     </div>
 
     <div class="col-md-4">
     <div class="links">
-      <a href="">Home</a>
-      <a href="">Criar Sessão</a>
+      <%= link_to "HOME", learning_propositions_path %>
+      <%= link_to "Criar Sessão", new_learning_proposition_path %>
     </div>
     </div>
   </div>

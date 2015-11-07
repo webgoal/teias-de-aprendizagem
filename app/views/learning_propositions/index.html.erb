@@ -16,7 +16,7 @@
         <td><%= learning_proposition.location %></td>
         <td><%= learning_proposition.min_attendees %></td>
         <td><%= learning_proposition.max_attendees %></td>
-        <td><%= link_to "SAIBA MAIS", "www.google.com.br", class: "btn btn-success" %></td>
+        <td><%= link_to "SAIBA MAIS", learning_proposition_path(learning_proposition.id), class: "btn btn-success" %></td>
       </tr>
     <% end %>
   </tbody>
