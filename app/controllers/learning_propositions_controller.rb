@@ -15,6 +15,7 @@ class LearningPropositionsController < ApplicationController
   def create
     @learning_proposition = LearningProposition.new(learning_proposition_params)
     @learning_proposition.save
+    redirect_to learning_proposition_path(@learning_proposition)
   end
 
   def delete
