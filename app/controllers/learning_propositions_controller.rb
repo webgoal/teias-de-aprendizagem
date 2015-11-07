@@ -1,6 +1,7 @@
 class LearningPropositionsController < ApplicationController
   def index
-    @learning_propositions = LearningProposition.all
+    @learning_propositions_open = LearningProposition.find_open
+    @learning_propositions_close = LearningProposition.find_close
   end
 
   def show

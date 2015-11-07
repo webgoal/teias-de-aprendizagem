@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+  <tread>
+    <tr>
+      <th>Nome do Curso</th>
+      <th>Data da Proposta</th>
+      <th>Localizaçao</th>
+      <th>Mínimo</th>
+      <th>Máximo</th>
+    </tr>
+  </tread>
+  <tbody>
+    <% learning_propositions.each do |learning_proposition| %>
+      <tr>
+        <td><%= learning_proposition.name %></td>
+        <td><%= learning_proposition.session_date %></td>
+        <td><%= learning_proposition.location %></td>
+        <td><%= learning_proposition.min_attendees %></td>
+        <td><%= learning_proposition.max_attendees %></td>
+        <td><%= link_to "SAIBA MAIS", learning_proposition_path(learning_proposition.id), class: "btn btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
