@@ -32,6 +32,16 @@
             </div>
           </div>
         </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.password_field :password, class: "form-control input-lg", placeholder: "Senha"%>
+            </div>
+            <div class="col-md-6">
+              <%= content_tag :div, "Obs.: Esta senha pode ser usada para eventual exclusão desta sessão", class: "password_label"%>
+            </div>
+          </div>
+        </div>
         <%= f.submit "CRIAR SESSÃO", class:"btn btn-success" %>
       <% end %>
     </div>

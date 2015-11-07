@@ -53,7 +53,6 @@ input, textarea {
   font-weight: normal;
 }
 
-
 .box-detail {
   background-color: #00b8bc;
   color: #fff;
@@ -84,4 +83,10 @@ input, textarea {
     color: #fff;
     background-color: #ff381f;
   }
+}
+
+.password_label{
+  margin-top: 15px;
+  color: #999;
+  font-size: 12px;
 }
