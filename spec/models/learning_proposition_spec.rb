@@ -13,6 +13,11 @@ RSpec.describe LearningProposition, type: :model do
       learning_proposition.password = nil
       expect(learning_proposition.save).to be false
     end
+
+    it 'Should not delete Learning Proposition without password' do
+      learning_proposition = create(:learning_proposition_1)
+      expect(learning_proposition.safe_destroy(nil)).to be false
+    end
   end
 
   context "When listing Propositions" do
@@ -23,7 +28,12 @@ RSpec.describe LearningProposition, type: :model do
       proposition_4=create(:learning_proposition_4)
       expect(LearningProposition.find_open).to eq [proposition_4]
     end
+    it "filter close Propositions" do
+      proposition_1=create(:learning_proposition_1)
+      proposition_2=create(:learning_proposition_2)
+      proposition_3=create(:learning_proposition_3)
+      create(:learning_proposition_4)
+      expect(LearningProposition.find_close).to eq [proposition_1,proposition_2,proposition_3]
+    end
   end
-
-
 end
