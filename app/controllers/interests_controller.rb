@@ -1,6 +1,6 @@
 class InterestsController < ApplicationController
   before_action :set_interest, only: [:show, :edit, :update, :destroy]
-  before_action :set_learning_proposition, only: [:show, :edit, :update, :destroy]
+  before_action :set_learning_proposition, only: [:show, :edit, :update, :destroy, :new, :create]
 
   # GET /interests
   # GET /interests.json
@@ -29,11 +29,11 @@ class InterestsController < ApplicationController
 
     respond_to do |format|
       if @interest.save
-        format.html { redirect_to @interest, notice: 'Interest was successfully created.' }
-        format.json { render :show, status: :created, location: @interest }
+        format.html { redirect_to @learning_proposition, notice: 'Interest was successfully created.' }
+
       else
         format.html { render :new }
-        format.json { render json: @interest.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -43,11 +43,11 @@ class InterestsController < ApplicationController
   def update
     respond_to do |format|
       if @interest.update(interest_params)
-        format.html { redirect_to @interest, notice: 'Interest was successfully updated.' }
-        format.json { render :show, status: :ok, location: @interest }
+        format.html { redirect_to @learning_proposition, notice: 'Interest was successfully updated.' }
+
       else
         format.html { render :edit }
-        format.json { render json: @interest.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -69,7 +69,7 @@ class InterestsController < ApplicationController
     end
 
     def set_learning_proposition
-      @interest = LearningProposition.find(params[:learning_proposition_id])
+      @learning_proposition = LearningProposition.find(params[:learning_proposition_id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def interest_params
