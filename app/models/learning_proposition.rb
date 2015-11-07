@@ -10,4 +10,8 @@ class LearningProposition < ActiveRecord::Base
         end
         return false
     end
+    
+    def self.find_open
+      where("session_date > ?", DateTime.now)
+    end
 end

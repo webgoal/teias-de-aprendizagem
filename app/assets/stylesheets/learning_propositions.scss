@@ -53,6 +53,38 @@ input, textarea {
   font-weight: normal;
 }
 
+.box-detail {
+  background-color: #00b8bc;
+  color: #fff;
+  padding-bottom: 40px;
+
+  h2 {
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+}
+
+.panel-heading {
+  padding: 60px 0 50px 60px;
+  p {
+    font-size: 18px;
+  }
+
+}
+
+.btn-orange {
+  background-color: #ee3a23;
+  font-size: 17px;
+  color: #fff;
+  padding: 15px 34px;
+  margin-left: 60px;
+  &:hover {
+    color: #fff;
+    background-color: #ff381f;
+  }
+}
+
 .password_label{
   margin-top: 15px;
   color: #999;
