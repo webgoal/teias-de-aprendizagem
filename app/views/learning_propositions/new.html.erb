@@ -5,7 +5,8 @@
         <h1>CRIAR SESSÃO DE APRENDIZAGEM</h1>
       </div>
 
-      <%= form_for @learning_proposition do |f| %>
+      <%= simple_form_for @learning_proposition do |f| %>
+        <%= f.error_notification %>
         <div class="form-group">
           <%= f.text_field :name, class: "form-control input-lg", placeholder: "Tema da Sessão de Aprendizagem. Ex: Gestão Ágil de Projetos com Scrum"%>
         </div>
