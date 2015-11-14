@@ -67,10 +67,12 @@ input, textarea {
 
 .panel-heading {
   padding: 40px 0 50px 60px;
+  width: 50%;
+  height: 220px;
+  float: left;
   p {
     font-size: 18px;
   }
-
 }
 
 .btn-orange {
@@ -96,4 +98,13 @@ input, textarea {
   height: 1px;
   background-color: #eee;
   margin: 40px 0;
+}
+
+.panel-interests {
+    float: right;
+    width: 50%;
+    height: 220px;
+    padding-top: 64px;
+    padding-right: 70px;
+    text-align: right;
 }

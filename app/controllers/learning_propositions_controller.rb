@@ -6,7 +6,6 @@ class LearningPropositionsController < ApplicationController
 
   def show
     @learning_proposition = LearningProposition.find(params[:id])
-    
   end
 
   def new

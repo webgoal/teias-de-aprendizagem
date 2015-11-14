@@ -11,6 +11,10 @@
     <p><%= @learning_proposition.location%></p>
     <p><%= l(@learning_proposition.session_date)%></p>
   </div>
+  <div class="panel-interests">
+   <h3><%= @learning_proposition.interests.size %>
+   estão interessados nesta sessão!</h3>
+  </div>
 
   <div class="">
     <%= link_to("INCREVER-SE AGORA", new_learning_proposition_interest_url(@learning_proposition), {class:"btn btn-orange"})  %>
@@ -31,11 +35,20 @@
   <div class="row">
     <div class="col-md-4">
     <%= form_tag(learning_proposition_path, method: "delete") do %>
-      <%= label_tag(:password, "Insira a senha para excluir esta sessão" + @learning_proposition.name) %>
+      <%= label_tag(:password, "Insira a senha para excluir esta sessão " + @learning_proposition.name) %>
       <%= password_field_tag("learning_proposition[password]", nil, class: 'form-control', placeholder:'Senha') %>
       <%= hidden_field_tag("learning_proposition[id]",@learning_proposition.id) %>
       <%= submit_tag("Excluir Sessão",class: 'btn btn-default') %>
     <% end %>
     </div>
   </div>
+
+<% else %>
+
+    <ul>
+      <% @learning_proposition.interests.each do |interests| %>
+          <li><%= interests.name %> - <span><%= interests.email %></span></li>
+      <% end %>
+    </ul>
+
 <% end %>
