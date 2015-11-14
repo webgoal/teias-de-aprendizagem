@@ -1,4 +1,10 @@
-<h2>Proposições Abertas</h2>
-<%= render "list", learning_propositions: @learning_propositions_open %>
-<h2>Proposições Fechadas</h2>
-<%= render "list", learning_propositions: @learning_propositions_close  %>
+<div class="container">
+  <div class="row" id="abertas">
+    <h2>Proposições Abertas</h2>
+    <%= render "list", learning_propositions: @learning_propositions_open %>
+  </div>
+  <div class="row" style="margin-top:50px">
+    <h2>Proposições Fechadas</h2>
+    <%= render "list", learning_propositions: @learning_propositions_close  %>
+  </div>
+</div>

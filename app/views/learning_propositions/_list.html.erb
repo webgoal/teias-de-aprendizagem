@@ -1,23 +1,8 @@
-<table class="table table-bordered">
-  <tread>
-    <tr>
-      <th>Nome do Curso</th>
-      <th>Data da Proposta</th>
-      <th>Localizaçao</th>
-      <th>Mínimo</th>
-      <th>Máximo</th>
-    </tr>
-  </tread>
-  <tbody>
     <% learning_propositions.each do |learning_proposition| %>
-      <tr>
-        <td><%= learning_proposition.name %></td>
-        <td><%= l(learning_proposition.session_date) %></td>
-        <td><%= learning_proposition.location %></td>
-        <td><%= learning_proposition.min_attendees %></td>
-        <td><%= learning_proposition.max_attendees %></td>
-        <td><%= link_to "SAIBA MAIS", learning_proposition_path(learning_proposition.id), class: "btn btn-success" %></td>
-      </tr>
+        <div class="jumbotron col-xs-6 col-md-5 list_index">
+          <h1><%= learning_proposition.name %></h1>
+          <p><%= learning_proposition.session_date.strftime("%d/%m/%Y %H:%M")%></p>
+          <p><%= truncate(learning_proposition.description, length: 180) %></p>
+          <p><%= link_to "SAIBA MAIS", learning_proposition_path(learning_proposition.id), class: "btn btn-success btn_saiba_mais" %></td></p>
+        </div>
     <% end %>
-  </tbody>
-</table>
