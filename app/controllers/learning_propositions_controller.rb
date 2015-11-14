@@ -6,7 +6,7 @@ class LearningPropositionsController < ApplicationController
 
   def show
     @learning_proposition = LearningProposition.find(params[:id])
-    
+
   end
 
   def new
@@ -39,5 +39,9 @@ class LearningPropositionsController < ApplicationController
 
   def delete_learning_proposition_params
     params.require(:learning_proposition).permit(:password, :id)
+  end
+
+  def search_less_than_one_day
+    @learning_propositions = LearningProposition.where("session_date = ?", Date.tomorrow())
   end
 end
