@@ -26,15 +26,16 @@
   </p>
 
 </div>
-
-<div class="divisor"></div>
-<div class="row">
-  <div class="col-md-4">
-  <%= form_tag(learning_proposition_path, method: "delete") do %>
-    <%= label_tag(:password, "Insira a senha para excluir esta sessão" + @learning_proposition.name) %>
-    <%= password_field_tag("learning_proposition[password]", nil, class: 'form-control', placeholder:'Senha') %>
-    <%= hidden_field_tag("learning_proposition[id]",@learning_proposition.id) %>
-    <%= submit_tag("Excluir Sessão",class: 'btn btn-default') %>
-  <% end %>
+<% if @learning_proposition.interests.size == 0 %>
+  <div class="divisor"></div>
+  <div class="row">
+    <div class="col-md-4">
+    <%= form_tag(learning_proposition_path, method: "delete") do %>
+      <%= label_tag(:password, "Insira a senha para excluir esta sessão" + @learning_proposition.name) %>
+      <%= password_field_tag("learning_proposition[password]", nil, class: 'form-control', placeholder:'Senha') %>
+      <%= hidden_field_tag("learning_proposition[id]",@learning_proposition.id) %>
+      <%= submit_tag("Excluir Sessão",class: 'btn btn-default') %>
+    <% end %>
+    </div>
   </div>
-</div>
+<% end %>

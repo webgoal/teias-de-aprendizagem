@@ -5,7 +5,8 @@ class LearningPropositionsController < ApplicationController
   end
 
   def show
-    @learning_proposition= LearningProposition.find(params[:id])
+    @learning_proposition = LearningProposition.find(params[:id])
+    
   end
 
   def new
@@ -21,14 +22,14 @@ class LearningPropositionsController < ApplicationController
 
       else
         format.html { render :new }
-
       end
     end
   end
 
-  def delete
+  def destroy
     @learning_proposition = LearningProposition.find(delete_learning_proposition_params[:id])
     @learning_proposition.safe_destroy(delete_learning_proposition_params[:password])
+    redirect_to learning_propositions_path
   end
 
   private
