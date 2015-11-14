@@ -12,7 +12,7 @@
     <% learning_propositions.each do |learning_proposition| %>
       <tr>
         <td><%= learning_proposition.name %></td>
-        <td><%= learning_proposition.session_date %></td>
+        <td><%= l(learning_proposition.session_date) %></td>
         <td><%= learning_proposition.location %></td>
         <td><%= learning_proposition.min_attendees %></td>
         <td><%= learning_proposition.max_attendees %></td>
