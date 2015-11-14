@@ -97,3 +97,23 @@ input, textarea {
   background-color: #eee;
   margin: 40px 0;
 }
+
+.list_index{
+  margin: 20px;
+  min-height: 400px;
+  max-height: 400px;
+}
+
+.list_index h1{
+  font-size: 40px;
+}
+
+.btn_saiba_mais{
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+.tamanho{
+  height: 500px;
+  overflow-y: scroll;
+}
