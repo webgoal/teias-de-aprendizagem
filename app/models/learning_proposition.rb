@@ -10,12 +10,12 @@ class LearningProposition < ActiveRecord::Base
         end
         return false
     end
-    
+
     def self.find_open
-      where("session_date > ?", DateTime.now)
+      where("session_date > ?", DateTime.now).order(:session_date)
     end
 
     def self.find_close
-      where("session_date <= ?", DateTime.now)
+      where("session_date <= ?", DateTime.now).order(session_date: :desc)
     end
 end
