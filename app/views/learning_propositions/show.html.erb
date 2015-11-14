@@ -11,9 +11,13 @@
     <p><%= @learning_proposition.location%></p>
     <p><%= l(@learning_proposition.session_date)%></p>
   </div>
+
   <div class="panel-interests">
-   <h3><%= @learning_proposition.interests.size %>
-   estão interessados nesta sessão!</h3>
+    <!--
+    <span class="numero_interessados" type="button">
+      Pessoas interessadas: <span class="badge numero_interessados"><%= @learning_proposition.interests.size %></span>
+    </span>
+  -->
   </div>
 
   <div class="">
@@ -45,10 +49,20 @@
 
 <% else %>
 
-    <ul>
+    <h3>Interessados nessa sessão
+    <span class="badge numero_interessados"><%= @learning_proposition.interests.size %></span>
+  </span></h3>
+    <table class="table table-condensed tabela_interessados">
+      <tr>
+        <th>NOME</th>
+        <th>E-MAIL</th>
+      </tr>
       <% @learning_proposition.interests.each do |interests| %>
-          <li><%= interests.name %> - <span><%= interests.email %></span></li>
+        <tr>
+          <td><%= interests.name %>
+          </td>
+          <td><%= interests.email %></span></td>
+        </tr>
       <% end %>
-    </ul>
-
+    </table>
 <% end %>
