@@ -128,3 +128,20 @@ input, textarea {
   height: 500px;
   overflow-y: scroll;
 }
+
+.numero_interessados{
+  font-size: 20px;
+}
+
+.tabela_interessados th{
+  font-size: 16px;
+}
+
+.tabela_interessados td{
+  font-size: 14px;
+}
+
+.badge{
+  background-color: $green;
+  color: #fff;
+}
