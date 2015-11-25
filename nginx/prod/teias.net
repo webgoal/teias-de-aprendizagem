@@ -4,7 +4,7 @@ upstream rails {
 
 server {
   listen 80;
-  server_name www.teiasdeaprendizagem.com.br;
+  server_name teias.net;
   root /home/ubuntu/boletim-web/current/public;
 
   location / {

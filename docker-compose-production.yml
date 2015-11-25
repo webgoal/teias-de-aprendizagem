@@ -6,7 +6,6 @@ web:
   restart: always
   command: bundle exec unicorn_rails -c config/unicorn.rb
   volumes:
-    - .:/myapp
     - /tmp:/tmp
   links:
     - db
@@ -14,7 +13,6 @@ web:
 
 nginx:
   build: ./nginx/prod
-  label: nginx_teias_prod
   volumes:
     - /tmp:/tmp
   ports:
